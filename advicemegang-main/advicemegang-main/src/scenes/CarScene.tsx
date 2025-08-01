@@ -1,5 +1,5 @@
 import React, { Suspense, useRef, useEffect } from 'react';
-import { useFrame, Canvas } from '@react-three/fiber';
+import { useFrame } from '@react-three/fiber';
 import { useGLTF, useScroll } from '@react-three/drei';
 
 // CarModel Component with fallback
@@ -62,20 +62,18 @@ function CarModel() {
 // Path is updated here as well
 useGLTF.preload("/cyberpunk-car.glb");
 
-// Main Scene Component
-export default function CarScene() {
+// Scene Content Component (to be used inside Canvas and ScrollControls)
+export default function CarSceneContent() {
   return (
-    <Canvas gl={{ antialias: true }} camera={{ position: [10, 5, 10], fov: 35 }}>
-      <Suspense fallback={null}>
-        <ambientLight intensity={0.5} />
-        <directionalLight position={[0, 10, 5]} intensity={1} />
-        <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} intensity={2} castShadow />
-        <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -1, 0]}>
-          <planeGeometry args={[100, 100]} />
-          <meshStandardMaterial color="#1a1a1a" />
-        </mesh>
-        <CarModel />
-      </Suspense>
-    </Canvas>
+    <Suspense fallback={null}>
+      <ambientLight intensity={0.5} />
+      <directionalLight position={[0, 10, 5]} intensity={1} />
+      <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} intensity={2} castShadow />
+      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -1, 0]}>
+        <planeGeometry args={[100, 100]} />
+        <meshStandardMaterial color="#1a1a1a" />
+      </mesh>
+      <CarModel />
+    </Suspense>
   );
 };

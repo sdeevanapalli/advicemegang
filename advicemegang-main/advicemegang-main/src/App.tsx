@@ -1,6 +1,7 @@
 import React from 'react';
+import { Canvas } from '@react-three/fiber';
 import { ScrollControls } from "@react-three/drei";
-import CarScene from './scenes/CarScene';
+import CarSceneContent from './scenes/CarScene';
 import AppNavBar from './components/AppNavBar';
 import HeroSection from './components/HeroSection';
 import FeaturesSection from './components/FeaturesSection';
@@ -16,18 +17,23 @@ export default function App() {
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <ScrollControls pages={4} damping={0.25}>
-          {/* 3D Scene in the background */}
-          <CarScene />
+        
+        {/* 3D Canvas with ScrollControls */}
+        <div className="fixed inset-0 z-0">
+          <Canvas gl={{ antialias: true }} camera={{ position: [10, 5, 10], fov: 35 }}>
+            <ScrollControls pages={4} damping={0.25}>
+              <CarSceneContent />
+            </ScrollControls>
+          </Canvas>
+        </div>
 
-          {/* HTML content in the foreground */}
-          <div className="relative z-10">
-            <AppNavBar />
-            <HeroSection />
-            <FeaturesSection />
-            <Footer />
-          </div>
-        </ScrollControls>
+        {/* HTML content in the foreground */}
+        <div className="relative z-10">
+          <AppNavBar />
+          <HeroSection />
+          <FeaturesSection />
+          <Footer />
+        </div>
       </TooltipProvider>
     </ThemeProvider>
   );
