@@ -11,7 +11,7 @@ export default function AppNavBar() {
           <div className="flex items-center space-x-2">
             <Car className="h-8 w-8 text-primary" />
             <span className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              CyberCar
+              Car Advisor
             </span>
           </div>
           
@@ -20,10 +20,10 @@ export default function AppNavBar() {
               Home
             </a>
             <a href="#features" className="text-foreground hover:text-primary transition-colors">
-              Features
+              Why Choose Us
             </a>
-            <a href="#gallery" className="text-foreground hover:text-primary transition-colors">
-              Gallery
+            <a href="#recommendation" className="text-foreground hover:text-primary transition-colors">
+              Find Your Car
             </a>
             <a href="#contact" className="text-foreground hover:text-primary transition-colors">
               Contact
@@ -31,8 +31,12 @@ export default function AppNavBar() {
           </div>
           
           <div className="flex items-center space-x-4">
-            <Button variant="outline" size="sm">
-              Test Drive
+            <Button 
+              variant="outline" 
+              size="sm"
+              onClick={() => document.getElementById('recommendation')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              Get Started
             </Button>
             <ThemeToggle />
           </div>

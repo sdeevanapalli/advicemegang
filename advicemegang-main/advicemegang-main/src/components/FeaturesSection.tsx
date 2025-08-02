@@ -1,75 +1,75 @@
 import React from 'react';
 import { BentoGrid, BentoGridItem } from '@/components/ui/bento-grid';
 import { 
-  Zap, 
-  Shield, 
-  Cpu, 
-  Battery, 
-  Wifi, 
-  Eye 
+  Search, 
+  DollarSign, 
+  Brain, 
+  Clock, 
+  Award, 
+  CheckCircle 
 } from 'lucide-react';
 
 export default function FeaturesSection() {
   const features = [
     {
-      title: "Lightning Fast Acceleration",
-      description: "0-60 mph in just 2.1 seconds with instant torque delivery",
+      title: "Smart Car Search",
+      description: "Advanced filtering system that matches cars to your exact preferences and budget",
       header: (
         <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 items-center justify-center">
-          <Zap className="h-12 w-12 text-primary" />
+          <Search className="h-12 w-12 text-primary" />
         </div>
       ),
-      icon: <Zap className="h-4 w-4 text-primary" />,
+      icon: <Search className="h-4 w-4 text-primary" />,
     },
     {
-      title: "Advanced Safety Systems",
-      description: "AI-powered collision avoidance and autonomous emergency braking",
+      title: "Budget Optimization",
+      description: "Find the best value cars within your price range, including financing options",
       header: (
         <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-accent/20 to-primary/20 items-center justify-center">
-          <Shield className="h-12 w-12 text-accent" />
+          <DollarSign className="h-12 w-12 text-accent" />
         </div>
       ),
-      icon: <Shield className="h-4 w-4 text-accent" />,
+      icon: <DollarSign className="h-4 w-4 text-accent" />,
     },
     {
-      title: "Neural Processing Unit",
-      description: "Quantum-enhanced AI for predictive driving and real-time optimization",
+      title: "AI-Powered Recommendations",
+      description: "Machine learning algorithms analyze thousands of factors to suggest perfect matches",
       header: (
         <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 items-center justify-center">
-          <Cpu className="h-12 w-12 text-primary" />
+          <Brain className="h-12 w-12 text-primary" />
         </div>
       ),
-      icon: <Cpu className="h-4 w-4 text-primary" />,
+      icon: <Brain className="h-4 w-4 text-primary" />,
     },
     {
-      title: "Extended Range Battery",
-      description: "300+ mile range with rapid 15-minute charging capability",
+      title: "Save Time & Effort",
+      description: "No more reading hundreds of brochures - get personalized recommendations instantly",
       header: (
         <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-accent/20 to-primary/20 items-center justify-center">
-          <Battery className="h-12 w-12 text-accent" />
+          <Clock className="h-12 w-12 text-accent" />
         </div>
       ),
-      icon: <Battery className="h-4 w-4 text-accent" />,
+      icon: <Clock className="h-4 w-4 text-accent" />,
     },
     {
-      title: "5G Connectivity",
-      description: "Always connected with real-time traffic and entertainment streaming",
+      title: "Expert Reviews & Ratings",
+      description: "Comprehensive analysis of safety, reliability, and owner satisfaction scores",
       header: (
         <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 items-center justify-center">
-          <Wifi className="h-12 w-12 text-primary" />
+          <Award className="h-12 w-12 text-primary" />
         </div>
       ),
-      icon: <Wifi className="h-4 w-4 text-primary" />,
+      icon: <Award className="h-4 w-4 text-primary" />,
     },
     {
-      title: "Augmented Reality HUD",
-      description: "Immersive AR display with navigation and vehicle diagnostics",
+      title: "Personalized Match Score",
+      description: "Each recommendation comes with a compatibility score based on your specific needs",
       header: (
         <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-accent/20 to-primary/20 items-center justify-center">
-          <Eye className="h-12 w-12 text-accent" />
+          <CheckCircle className="h-12 w-12 text-accent" />
         </div>
       ),
-      icon: <Eye className="h-4 w-4 text-accent" />,
+      icon: <CheckCircle className="h-4 w-4 text-accent" />,
     },
   ];
 
@@ -78,10 +78,10 @@ export default function FeaturesSection() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-4">
-            Revolutionary Features
+            Why Choose Car Advisor?
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Cutting-edge technology meets unparalleled performance in every aspect of the CyberDrive experience
+            Smart technology meets expert knowledge to revolutionize your car buying experience
           </p>
         </div>
         

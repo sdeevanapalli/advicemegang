@@ -5,6 +5,7 @@ import CarSceneContent from './scenes/CarScene';
 import AppNavBar from './components/AppNavBar';
 import HeroSection from './components/HeroSection';
 import FeaturesSection from './components/FeaturesSection';
+import CarRecommendationSection from './components/CarRecommendationSection';
 import Footer from './components/Footer';
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
@@ -20,7 +21,11 @@ export default function App() {
         
         {/* 3D Canvas with ScrollControls */}
         <div className="fixed inset-0 z-0">
-          <Canvas gl={{ antialias: true }} camera={{ position: [10, 5, 10], fov: 35 }}>
+          <Canvas 
+            gl={{ antialias: true }} 
+            camera={{ position: [10, 5, 10], fov: 35 }}
+            shadows
+          >
             <ScrollControls pages={4} damping={0.25}>
               <CarSceneContent />
             </ScrollControls>
@@ -32,6 +37,7 @@ export default function App() {
           <AppNavBar />
           <HeroSection />
           <FeaturesSection />
+          <CarRecommendationSection />
           <Footer />
         </div>
       </TooltipProvider>
