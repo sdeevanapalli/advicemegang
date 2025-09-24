@@ -1,5 +1,5 @@
 import HeroSection from '@/components/HeroSection'
-import { FeaturesSection } from '@/components/FeaturesSection'
+import FeaturesSection from '@/components/FeaturesSection'
 import { AICarRecommendationSection } from '@/components/AICarRecommendationSection'
 import { AIChat } from '@/components/AIChat'
 import Footer from '@/components/Footer'

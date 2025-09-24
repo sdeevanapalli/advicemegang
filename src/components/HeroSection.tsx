@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react';
 import { TextGenerateEffect } from '@/components/ui/text-generate-effect';
 import { Button } from '@/components/ui/button';
