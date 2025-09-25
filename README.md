@@ -1,449 +1,240 @@
-# 🚗 AI Car Advisor - Next.js Edition
+# 🚗 Car Advice AI - Real-Time Car Expert
 
-**🆕 NEW: Now powered by OpenAI GPT-4 with Next.js for senior-friendly car recommendations**
+**🆕 LATEST: Streamlined AI-powered car advice with real-time Indian market data**
 
-> **Latest Update**: This project has been upgraded to a full Next.js application with OpenAI GPT-4 integration, specifically designed for senior car buyers (55+) in India. The original ML algorithms are still available, but the new AI system provides dynamic, conversational recommendations.
+> **Complete Refactor (2024)**: This project has been completely refactored into a clean, focused AI chatbot that provides instant car buying advice with real-time 2024-2025 model data from the Indian automotive market.
 
-## 🌟 New AI Features (GPT-4 Powered)
+## ✨ Core Features
 
-- **🤖 Intelligent Chat**: Ask any car question in natural language
-- **📋 Smart Questionnaire**: AI-generated questions that adapt to your answers
-- **🎯 Personalized Recommendations**: Real-time analysis of all Indian car brands
-- **👥 Senior-Focused**: Designed specifically for 55+ buyers with accessibility in mind
-- **💬 Expert Explanations**: Complex car terms explained in simple language
-- **⚖️ AI Comparisons**: Detailed side-by-side analysis of any vehicles
+- **🤖 Instant AI Chat**: Direct conversation with car expert - no forms, no complexity
+- **� Real-Time Data**: Current 2024-2025 models, prices, and specifications
+- **�🇳 Indian Market Focus**: Specialized for Indian road conditions and brands
+- **� Smart Query Processing**: Understands natural language car questions
+- **🎯 Contextual Recommendations**: Budget-aware suggestions with current market data
+- **⚡ Lightning Fast**: Streamlined interface loads instantly
 
-## 🚀 Quick Start (AI Version)
+## 🚀 Quick Start
 
 ### Prerequisites
 
 - Node.js 18+
 - OpenAI API Key
+- Optional: RapidAPI Key (for enhanced data)
 
-### Setup
+### Installation
 
 ```bash
+# Clone repository
+git clone https://github.com/LuciferK47/advicemegang.git
+cd advicemegang
+
 # Install dependencies
 npm install
 
 # Set up environment variables
-cp .env.example .env.local
+cp .env.local.example .env.local
 # Add your OpenAI API key to .env.local
 
 # Start development server
 npm run dev
-# Open http://localhost:3000
+# Open http://localhost:8081
 ```
 
-### Get OpenAI API Key
+### Environment Setup
+
+Create `.env.local` with your API keys:
+
+```env
+# Required: OpenAI API Key
+VITE_OPENAI_API_KEY=your_openai_api_key_here
+
+# Optional: Enhanced real-time data
+VITE_RAPIDAPI_KEY=your_rapidapi_key_here
+```
+
+### Get API Keys
+
+**OpenAI API Key** (Required):
 
 1. Visit [OpenAI Platform](https://platform.openai.com/)
-2. Create account and navigate to API Keys
-3. Generate new key and add to `.env.local`:
-   ```
-   OPENAI_API_KEY=your_openai_api_key_here
-   ```
+2. Create account → API Keys → Create new key
+3. Add to `.env.local`
 
----
+**RapidAPI Key** (Optional - for enhanced data):
 
-# Original CarAdvisor AI Documentation
+1. Visit [RapidAPI](https://rapidapi.com/)
+2. Sign up → Subscribe to car data APIs
+3. Add to `.env.local`
 
-**Advanced Machine Learning Car Recommendation System**
+## 🏗️ Architecture
 
-CarAdvisor AI is a sophisticated car recommendation platform that leverages cutting-edge machine learning algorithms to help users find their perfect vehicle. Using ensemble methods, cosine similarity scoring, k-means clustering, and content-based collaborative filtering, the system provides highly personalized car recommendations based on user preferences, budget, and lifestyle needs.
+### Real-Time Data System
 
-## Key Features
+- **Smart Caching**: 5-minute cache for API responses to reduce costs
+- **Multi-Source Fallback**: RapidAPI → Mock data → Graceful error handling
+- **Query Intelligence**: Extracts budget, brand, fuel type from natural language
+- **Current Models**: Always shows 2024-2025 specifications and pricing
 
-### Advanced AI & Machine Learning
+### AI Integration (RAG)
 
-- **Ensemble Recommendation System**: Combines multiple ML algorithms for optimal accuracy
-- **Cosine Similarity Scoring**: Mathematical vector analysis for preference matching
-- **K-means Clustering**: Vehicle categorization for diverse recommendations
-- **Content-based Collaborative Filtering**: Analyzes user-car compatibility
-- **Vector Space Modeling**: Converts preferences into mathematical representations
+- **Retrieval Augmented Generation**: Combines real-time data with AI knowledge
+- **Context-Aware Responses**: Uses current car data to inform recommendations
+- **Budget Matching**: Automatically finds cars in specified price ranges
+- **Specification Accuracy**: Real mileage, safety ratings, and features
 
-### Modern User Interface
+### Modern Tech Stack
 
-- **Dark/Light Mode**: Seamless theme switching with system preference detection
-- **Responsive Design**: Optimized for desktop, tablet, and mobile devices
-- **Interactive Forms**: Dynamic questionnaire with real-time validation
-- **Beautiful Gradients**: Modern visual design with smooth animations
-- **Accessibility**: WCAG compliant with screen reader support
+- **Frontend**: React 18 + TypeScript + Vite
+- **Styling**: Tailwind CSS + Shadcn/ui components
+- **AI**: OpenAI GPT-3.5-turbo with custom prompts
+- **Data**: Custom car data service with API integration
+- **State**: Simple React hooks (no complex state management)
 
-### Comprehensive Car Analysis
+## 💬 Usage Examples
 
-- **Budget Optimization**: Smart price range analysis and value scoring
-- **Feature Matching**: Detailed compatibility scoring for desired features
-- **Safety Analytics**: Reliability and safety rating analysis
-- **Environmental Impact**: Fuel efficiency and eco-friendliness scoring
-- **Ownership Costs**: Maintenance and long-term cost predictions
-
-### Smart Recommendations
-
-- **Personalized Scoring**: Each car receives a detailed match percentage
-- **Detailed Reasoning**: AI-powered explanations for each recommendation
-- **Warning System**: Alerts for potential issues or incompatibilities
-- **Diverse Results**: Clustering ensures variety in recommendations
-- **Real-time Processing**: Advanced algorithms with optimized performance
-
-## 🛠 Technology Stack
-
-### Frontend
-
-- **React 18** - Modern React with hooks and functional components
-- **TypeScript** - Type-safe development with enhanced IDE support
-- **Tailwind CSS** - Utility-first CSS framework for rapid styling
-- **Shadcn/ui** - High-quality, accessible UI component library
-- **Vite** - Lightning-fast build tool and development server
-
-### State Management & Routing
-
-- **React Router DOM** - Client-side routing with dynamic navigation
-- **TanStack Query** - Server state management and caching
-- **React Hook Form** - Performant form handling with validation
-- **Zod** - Schema validation for type-safe data handling
-
-### Machine Learning & Algorithms
-
-- **Custom ML Engine** - Built-in TypeScript ML algorithms
-- **Vector Mathematics** - Cosine similarity and Euclidean distance
-- **Clustering Algorithms** - K-means implementation for data grouping
-- **Ensemble Methods** - Multiple algorithm combination for accuracy
-
-### UI/UX Libraries
-
-- **Radix UI** - Headless, accessible component primitives
-- **Lucide React** - Beautiful, customizable icon library
-- **next-themes** - Advanced theme management system
-- **Sonner** - Modern toast notification system
-
-## Installation & Setup
-
-### Prerequisites
-
-Ensure you have one of the following runtime environments installed:
-
-#### Node.js (Recommended)
-
-- **Version**: 18.x or higher
-- **Download**: [nodejs.org](https://nodejs.org/)
-
-#### Bun (Alternative - Faster)
-
-- **Version**: Latest stable
-- **Download**: [bun.sh](https://bun.sh/)
-
----
-
-## OS-Specific Installation Instructions
-
-### Linux (Ubuntu/Debian/Fedora/Arch)
-
-#### Ubuntu/Debian:
-
-```bash
-# Update package manager
-sudo apt update && sudo apt upgrade -y
-
-# Install Node.js and npm
-curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
-sudo apt-get install -y nodejs
-
-# Or install using snap
-sudo snap install node --channel=18/stable
-
-# Verify installation
-node --version && npm --version
-
-# Clone and setup project
-git clone <repository-url>
-cd advicemegang-main
-npm install
-npm run dev
-```
-
-#### Fedora/RHEL/CentOS:
-
-```bash
-# Install Node.js via dnf
-sudo dnf install nodejs npm -y
-
-# Or using Node Version Manager (recommended)
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
-source ~/.bashrc
-nvm install 18
-nvm use 18
-
-# Setup project
-git clone <repository-url>
-cd advicemegang-main
-npm install
-npm run dev
-```
-
-#### Arch Linux:
-
-```bash
-# Install Node.js
-sudo pacman -S nodejs npm
-
-# Or using AUR helper (yay)
-yay -S nodejs-lts-hydrogen
-
-# Setup project
-git clone <repository-url>
-cd advicemegang-main
-npm install
-npm run dev
-```
-
-### macOS
-
-#### Using Homebrew (Recommended):
-
-```bash
-# Install Homebrew if not already installed
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-# Install Node.js
-brew install node
-
-# Or install specific version
-brew install node@18
-
-# Verify installation
-node --version && npm --version
-
-# Setup project
-git clone <repository-url>
-cd advicemegang-main
-npm install
-npm run dev
-```
-
-#### Using MacPorts:
-
-```bash
-# Install Node.js via MacPorts
-sudo port install nodejs18 +universal
-
-# Setup project
-git clone <repository-url>
-cd advicemegang-main
-npm install
-npm run dev
-```
-
-#### Manual Installation:
-
-1. Download Node.js installer from [nodejs.org](https://nodejs.org/)
-2. Run the `.pkg` installer
-3. Follow the installation wizard
-4. Open Terminal and verify: `node --version`
-
-### Windows
-
-#### Using Node.js Installer (Easiest):
-
-1. Visit [nodejs.org](https://nodejs.org/)
-2. Download the Windows Installer (.msi)
-3. Run installer as Administrator
-4. Check "Add to PATH" option
-5. Open Command Prompt or PowerShell
-6. Verify: `node --version && npm --version`
-
-#### Using Chocolatey:
-
-```powershell
-# Install Chocolatey (if not installed)
-Set-ExecutionPolicy Bypass -Scope Process -Force
-[System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072
-iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
-
-# Install Node.js
-choco install nodejs
-
-# Verify installation
-node --version && npm --version
-```
-
-#### Using Windows Subsystem for Linux (WSL):
-
-```bash
-# Install WSL2 (Windows 10/11)
-wsl --install -d Ubuntu
-
-# Follow Ubuntu installation steps above
-```
-
-#### Setup Project (Windows):
-
-```cmd
-# Command Prompt
-git clone <repository-url>
-cd advicemegang-main
-npm install
-npm run dev
-
-# Or PowerShell
-git clone <repository-url>
-Set-Location advicemegang-main
-npm install
-npm start
-```
-
----
-
-## Quick Start
-
-### Development Mode
-
-```bash
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
-
-# Open browser to http://localhost:5173
-```
-
-### Production Build
-
-```bash
-# Build for production
-npm run build
-
-# Preview production build
-npm run preview
-
-# Deploy dist/ folder to your hosting service
-```
-
-### Alternative Package Managers
-
-#### Using Yarn:
-
-```bash
-# Install Yarn globally
-npm install -g yarn
-
-# Install dependencies
-yarn install
-
-# Start development
-yarn dev
-```
-
-#### Using pnpm:
-
-```bash
-# Install pnpm globally
-npm install -g pnpm
-
-# Install dependencies
-pnpm install
-
-# Start development
-pnpm dev
-```
-
-#### Using Bun (Fastest):
-
-```bash
-# Install dependencies
-bun install
-
-# Start development
-bun run dev
-```
-
-## 📁 Project Structure
+### Try These Queries
 
 ```
-advicemegang-main/
+"Show me automatic SUVs under 15 lakhs"
+"Compare Maruti Swift 2024 vs Hyundai i20 2024"
+"Best petrol cars for city driving with good mileage"
+"What are Tata's latest EV models in 2024?"
+"I need a 7-seater family car under 20 lakhs"
+"Which cars have 5-star safety ratings?"
+```
+
+### Sample Conversation
+
+**User**: "I need an automatic car for city driving under 10 lakhs"
+
+**AI Response**:
+
+> Based on current 2024 market data, here are great automatic options under ₹10L:
+>
+> **Maruti Baleno CVT 2024**: ₹7.5L-₹9.8L, 22.9 km/l, smooth CVT transmission
+> **Hyundai Grand i10 Nios AMT 2024**: ₹6.2L-₹8.5L, 20.7 km/l, compact city car
+> **Tata Tiago AMT 2024**: ₹5.8L-₹7.9L, 19.0 km/l, excellent value for money
+>
+> All these have good service networks and are perfect for city conditions. The Baleno offers premium features, while Tiago gives best value. Would you like detailed comparison of any specific models?
+
+## � Project Structure
+
+```
+advicemegang/
 ├── src/
-│   ├── components/          # Reusable UI components
-│   │   ├── ui/             # Base UI components (shadcn/ui)
-│   │   ├── CarRecommendationForm.tsx
-│   │   ├── CarRecommendationResults.tsx
-│   │   └── theme-provider.tsx
-│   ├── pages/              # Application pages/routes
-│   │   ├── Index.tsx       # Main application page
-│   │   └── NotFound.tsx    # 404 error page
-│   ├── utils/              # Utility functions
-│   │   ├── carRecommendation.ts      # Basic recommendation logic
-│   │   └── advancedMLRecommendation.ts # Advanced ML algorithms
-│   ├── types/              # TypeScript type definitions
-│   │   └── car.ts          # Car and preference interfaces
-│   ├── data/               # Static data and databases
-│   │   └── cars.ts         # Car database with sample data
-│   ├── hooks/              # Custom React hooks
-│   ├── lib/                # Library configurations
-│   └── App.tsx             # Root application component
-├── public/                 # Static assets
-├── package.json           # Dependencies and scripts
-├── tailwind.config.ts     # Tailwind CSS configuration
-├── tsconfig.json          # TypeScript configuration
-├── vite.config.ts         # Vite build configuration
-└── README.md              # This file
+│   ├── components/
+│   │   ├── AIChat.tsx              # Main chat interface
+│   │   ├── theme-provider.tsx      # Dark/light mode
+│   │   └── ui/                     # Shadcn/ui components
+│   ├── services/
+│   │   ├── ai.ts                   # OpenAI integration + RAG
+│   │   └── carData.ts              # Real-time car data service
+│   ├── types/
+│   │   └── ai.ts                   # TypeScript interfaces
+│   ├── lib/
+│   │   └── openai.ts               # OpenAI configuration
+│   └── hooks/
+│       └── useAI.ts                # Chat hook
+├── .env.local                      # API keys (not in repo)
+├── package.json                    # Dependencies
+└── README.md                       # This file
 ```
 
-## Machine Learning Architecture
+## 🚗 Supported Car Data (2024-2025)
 
-### Algorithm Components
+### Major Brands Covered
 
-1. **User Vector Creation**
+- **Maruti Suzuki**: Swift, Baleno, Brezza, Fronx, Invicto, WagonR, Alto K10, Dzire, Ertiga, Celerio
+- **Hyundai**: Creta, Venue, i20, Verna, Exter, Alcazar, Grand i10 Nios, Aura, Tucson
+- **Tata**: Nexon, Harrier, Safari, Punch, Curvv, Nexon EV, Punch EV, Tiago, Tigor, Altroz
+- **Mahindra**: XUV700, Thar, XUV3XO, Scorpio-N, XUV300, XUV400 EV, Bolero, Scorpio Classic
+- **Honda**: City, Elevate, Amaze, City Hybrid
+- **Toyota**: Hyryder, Innova Hycross, Fortuner, Glanza, Camry Hybrid, Vellfire
 
-   - Converts user preferences to numerical vectors
-   - Normalizes budget, importance weights, and priorities
-   - Creates multi-dimensional preference space
+### Data Includes
 
-2. **Car Vector Creation**
+- ✅ **Current Prices** (₹ in lakhs, updated 2024)
+- ✅ **Latest Mileage** (ARAI certified figures)
+- ✅ **Engine Specifications** (Capacity, power, torque)
+- ✅ **Safety Ratings** (Global NCAP scores where available)
+- ✅ **Fuel Options** (Petrol/Diesel/CNG/Electric)
+- ✅ **Transmission Types** (Manual/AMT/CVT/AT)
+- ✅ **Body Types** (Hatchback/Sedan/SUV/MPV)
+- ✅ **Key Features** (Infotainment, safety, comfort)
+- ✅ **Availability Status** (Available/Limited/Discontinued)
 
-   - Transforms car attributes into comparable vectors
-   - Normalizes price, efficiency, and feature scores
-   - Enables mathematical comparison operations
+## 🛠️ Development
 
-3. **Cosine Similarity Calculation**
+### Available Scripts
 
-   - Measures angle between user and car vectors
-   - Provides compatibility score (0-1 range)
-   - Accounts for preference magnitude differences
+- `npm run dev` - Start development server (http://localhost:8081)
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Check code quality
+- `npm run type-check` - TypeScript checking
 
-4. **K-means Clustering**
+### Development Setup
 
-   - Groups cars by price and efficiency characteristics
-   - Ensures diverse recommendations across segments
-   - Prevents recommendation bias toward single category
+```bash
+# Clone and setup
+git clone https://github.com/LuciferK47/advicemegang.git
+cd advicemegang
 
-5. **Ensemble Scoring**
-   - Combines multiple algorithm outputs
-   - Weights different factors based on importance
-   - Produces final recommendation scores
+# Install dependencies
+npm install
 
-### Scoring Methodology
+# Setup environment
+cp .env.local.example .env.local
+# Add your OpenAI API key
 
-- **Budget Compatibility (25%)**: Price range optimization
-- **Feature Matching (20%)**: Desired feature alignment
-- **ML Similarity (40%)**: Vector-based compatibility
-- **Ownership Costs (15%)**: Reliability and maintenance factors
+# Start development
+npm run dev
+```
 
-## Theming & Customization
+### Code Structure
 
-### Dark Mode Implementation
+- **`src/components/AIChat.tsx`** - Main chat interface with message handling
+- **`src/services/ai.ts`** - OpenAI integration with RAG implementation
+- **`src/services/carData.ts`** - Real-time car data fetching and caching
+- **`src/App.tsx`** - Simple app wrapper with theme provider
+- **`src/lib/openai.ts`** - OpenAI client configuration
 
-- **System Preference Detection**: Automatically detects OS theme
-- **Manual Toggle**: User can override system preference
-- **Persistent Storage**: Theme choice saved across sessions
-- **Smooth Transitions**: Animated theme switching
+## 🔧 Customization
 
-### Customization Options
+### Adding New Car Brands
 
-- **Color Schemes**: Easily modifiable via Tailwind config
-- **Component Themes**: Shadcn/ui component customization
-- **Layout Adjustments**: Responsive breakpoints and spacing
-- **Typography**: Font family and size customizations
+Edit `src/services/carData.ts`:
+
+```typescript
+private readonly INDIAN_CAR_DATA = {
+  'your-brand': {
+    models: ['Model1 2024', 'Model2 2024'],
+    priceRange: { min: 500000, max: 1500000 }
+  }
+}
+```
+
+### Modifying AI Behavior
+
+Update system prompt in `src/services/ai.ts`:
+
+```typescript
+const systemPrompt = `Your custom car expert instructions...`;
+```
+
+### Theme Customization
+
+Modify `tailwind.config.ts` for colors and styling:
+
+```typescript
+theme: {
+  extend: {
+    colors: {
+      // Your custom colors
+    }
+  }
+}
+```
 
 ## 🔧 Available Scripts
 
