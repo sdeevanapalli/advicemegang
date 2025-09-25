@@ -14,27 +14,17 @@ import {
   MessageCircle, 
   Loader2,
   Lightbulb,
-  Car,
-  IndianRupee,
-  MapPin,
   AlertCircle
 } from 'lucide-react'
 import { useAIChat } from '@/hooks/useAI'
-import { ChatMessage, UserPreferences, CarRecommendation } from '@/types/ai'
-import { aiUtils } from '@/services/ai'
+import { ChatMessage } from '@/types/ai'
 
 interface AIChatProps {
-  userPreferences?: UserPreferences
-  currentCars?: CarRecommendation[]
   initialMessage?: string
-  onRecommendationRequest?: () => void
 }
 
 export function AIChat({ 
-  userPreferences, 
-  currentCars, 
-  initialMessage,
-  onRecommendationRequest 
+  initialMessage 
 }: AIChatProps) {
   const [inputMessage, setInputMessage] = useState('')
   const [showSuggestions, setShowSuggestions] = useState(true)
@@ -67,10 +57,7 @@ export function AIChat({
     try {
       await sendMessage({
         message: messageToSend,
-        context: {
-          userPreferences,
-          currentCars,
-        }
+        context: {}
       })
     } catch (err) {
       console.error('Failed to send message:', err)
@@ -96,14 +83,6 @@ export function AIChat({
   ]
 
   const getContextualSuggestions = () => {
-    if (userPreferences?.budget) {
-      const budget = userPreferences.budget
-      return [
-        `Show me cars in my budget range (${aiUtils.formatPriceInLakhs(budget.min)} - ${aiUtils.formatPriceInLakhs(budget.max)})`,
-        "What's the best value for money car in my budget?",
-        "Should I consider going slightly above my budget?"
-      ]
-    }
     return suggestedQuestions.slice(0, 3)
   }
 
@@ -230,29 +209,7 @@ export function AIChat({
             </div>
           </div>
 
-          {/* Context Info */}
-          {(userPreferences || currentCars) && (
-            <div className="mt-2 flex gap-2 text-xs text-muted-foreground">
-              {userPreferences && (
-                <Badge variant="outline" className="text-xs">
-                  <IndianRupee className="h-3 w-3 mr-1" />
-                  Budget: {aiUtils.formatPriceInLakhs(userPreferences.budget.min)} - {aiUtils.formatPriceInLakhs(userPreferences.budget.max)}
-                </Badge>
-              )}
-              {currentCars && currentCars.length > 0 && (
-                <Badge variant="outline" className="text-xs">
-                  <Car className="h-3 w-3 mr-1" />
-                  {currentCars.length} car{currentCars.length > 1 ? 's' : ''} in context
-                </Badge>
-              )}
-              {userPreferences?.location && (
-                <Badge variant="outline" className="text-xs">
-                  <MapPin className="h-3 w-3 mr-1" />
-                  {userPreferences.location}
-                </Badge>
-              )}
-            </div>
-          )}
+
         </CardContent>
       </Card>
     </div>
